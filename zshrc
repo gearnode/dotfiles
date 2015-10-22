@@ -1,3 +1,5 @@
+autoload -U colors && colors
+
 # Variable {
     platform="unknown"
     kernel=`uname`
@@ -9,10 +11,13 @@
 
 # }
 
+function get_current_git_branch(){
+git name-rev --name-only --no-undefined --always HEAD
+}
+
 # General {
     PATH="/usr/local/Cellar/vim/7.4.488/bin:$HOME/.brew/bin:/usr/local/git/bin:$PATH"
-    PROMPT='$(prompt_end)'
-    PS1="$> "
+    PS1="%{$fg[magenta]%}%n% %{$fg[white]%} at%{$fg[yellow]%} %m% %{$fg[white]%} in%{$fg[green]%} %~ %{$fg[white]%}on %{$fg[red]%}$(get_git_branch) %{$fg[white]%}on %{$fg[blue]%}$(get_current_git_branch) %{$reset_color%}$ "
 # }
 
 # Birdly {
