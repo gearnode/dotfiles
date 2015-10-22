@@ -1,7 +1,7 @@
 [alias]
   l = log --pretty=oneline --graph --abbrev-commit
   s = status
-  branch = branch -a
+  b = branch -a
   cm = commit -m
 
 [core]
