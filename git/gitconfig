@@ -1,0 +1,24 @@
+[alias]
+  l = log --pretty=oneline --graph --abbrev-commit
+  s = status
+  branch = branch -a
+  cm = commit -m
+
+[core]
+  excludesfile = ~/.gitignore
+	editor = /usr/bin/vim
+
+[apply]
+  whitespace = fix
+
+[merge]
+  log = true
+
+[color]
+  ui = auto
+
+[user]
+  email = bfrimin@student.42.fr
+  name = Gearnode
+[push]
+  default = simple
