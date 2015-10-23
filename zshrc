@@ -12,12 +12,16 @@ autoload -U colors && colors
 # }
 
 function get_current_git_branch(){
-git name-rev --name-only --no-undefined --always HEAD
+  git name-rev --name-only --no-undefined --always HEAD
+}
+
+function git_prompt_info() {
+  git branch | awk '/^\*/ { print $2 }'
 }
 
 # General {
     PATH="/usr/local/Cellar/vim/7.4.488/bin:$HOME/.brew/bin:/usr/local/git/bin:$PATH"
-    PS1="%{$fg[magenta]%}%n% %{$fg[white]%} at%{$fg[yellow]%} %m% %{$fg[white]%} in%{$fg[green]%} %~ %{$fg[white]%}on %{$fg[red]%}$(get_git_branch) %{$fg[white]%}on %{$fg[blue]%}$(get_current_git_branch) %{$reset_color%}$ "
+    PS1="%{$fg[magenta]%}%n% %{$fg[white]%}@%{$fg[yellow]%}%m% %{$fg[white]%} in%{$fg[green]%} %~ %{$fg[white]%}%{$reset_color%}$ "
 # }
 
 # Birdly {
