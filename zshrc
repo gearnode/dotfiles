@@ -11,6 +11,7 @@ autoload -U colors && colors
 
 # }
 
+
 function get_current_git_branch(){
   git name-rev --name-only --no-undefined --always HEAD
 }
