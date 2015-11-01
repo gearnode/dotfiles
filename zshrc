@@ -38,6 +38,8 @@ function git_prompt_info() {
     fi
 # }
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
 # Alias {
     alias 'l'='ls -lF'
     alias 'la'='ls -laF'
@@ -72,3 +74,5 @@ function git_prompt_info() {
     # }
 
 # }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
