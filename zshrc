@@ -21,7 +21,7 @@ function git_prompt_info() {
 }
 
 # General {
-    PATH="/usr/local/Cellar/vim/7.4.488/bin:$HOME/.brew/bin:/usr/local/git/bin:$PATH"
+    PATH="./bin:/usr/local/Cellar/vim/7.4.488/bin:$HOME/.brew/bin:/usr/local/git/bin:$PATH"
     PS1="%{$fg[magenta]%}%n% %{$fg[white]%}@%{$fg[yellow]%}%m% %{$fg[white]%} in%{$fg[green]%} %~ %{$fg[white]%}%{$reset_color%}$ "
 # }
 
