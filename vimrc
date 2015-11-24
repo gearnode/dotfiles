@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kien/ctrlp.vim'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-eunuch'
 call plug#end()
 
 " General {
