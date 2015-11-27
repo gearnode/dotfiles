@@ -23,7 +23,7 @@ call plug#end()
     scriptencoding utf-8
     set fileencoding=utf-8
     set nocompatible
-
+    inoremap jj <ESC> " Left insert mode
     set history=1000
     set virtualedit=onemore         " Allow cursor beyond last character
 
