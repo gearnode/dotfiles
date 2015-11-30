@@ -16,6 +16,12 @@ call plug#end()
 
 " General {
 
+  " nomap
+  :map <DOWN> <Esc>
+  :map <UP> <Esc>
+  :map <LEFT> <Esc>
+  :map <RIGHT> <Esc>
+
     filetype plugin indent on
     syntax on
     set mouse=a
@@ -26,6 +32,8 @@ call plug#end()
     inoremap jj <ESC> " Left insert mode
     set history=1000
     set virtualedit=onemore         " Allow cursor beyond last character
+
+    set colorcolumn=80
 
     " Last position in the buffer is the first line when editing a git commit message
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
