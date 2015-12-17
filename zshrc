@@ -76,3 +76,6 @@ function git_prompt_info() {
 # }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /Users/gearnode/.travis/travis.sh ] && source /Users/gearnode/.travis/travis.sh

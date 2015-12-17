@@ -3,6 +3,7 @@
   s = status
   b = branch -a
   cm = commit -m
+  t = tag --sort version:refname
 
 [core]
   excludesfile = ~/.gitignore
