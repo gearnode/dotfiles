@@ -21,6 +21,10 @@ call plug#end()
   :map <UP> <Esc>
   :map <LEFT> <Esc>
   :map <RIGHT> <Esc>
+  :imap <DOWN> <Esc>
+  :imap <UP> <Esc>
+  :imap <RIGHT> <Esc>
+  :imap <DOWN> <Esc>
 
     filetype plugin indent on
     syntax on
