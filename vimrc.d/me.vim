@@ -1,4 +1,3 @@
-
 colorscheme Tomorrow-Night
 
 set number
@@ -44,4 +43,3 @@ set nojoinspaces " Prevents inserting two spaces after punctuation on a join (J)
 autocmd BufNewFile,BufRead *.html.erb set filetype=html.erb
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
-
