@@ -24,6 +24,10 @@ if has("statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
+" [Plugin] Emmet Vim
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 " [Plugin] Vim Indent Guides
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1

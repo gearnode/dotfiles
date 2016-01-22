@@ -1,9 +1,11 @@
 [alias]
   l = log --pretty=oneline --graph --abbrev-commit
-  s = status
+  s = status -s
   b = branch -a
   cm = commit -m
   t = tag --sort version:refname
+  f = fetch --prune
+  ck = checkout
 
 [core]
   excludesfile = ~/.gitignore

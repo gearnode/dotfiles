@@ -6,4 +6,5 @@ call plug#begin()
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-eunuch'
   Plug 'elixir-lang/vim-elixir'
+  Plug 'mattn/emmet-vim'
 call plug#end()
