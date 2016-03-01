@@ -21,6 +21,7 @@ set smartcase " Case sensitive when uc present
 set scrolloff=3 " Minimum lines to keep above and below cursor
 set scrolljump=5 " Lines to scroll when cursor leaves screen
 set pastetoggle=<F12> " pastetoggle (sane indentation on pastes)
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Last position in the buffer is the first line when editing a git commit message
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
