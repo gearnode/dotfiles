@@ -7,4 +7,5 @@ call plug#begin()
   Plug 'tpope/vim-eunuch'
   Plug 'elixir-lang/vim-elixir'
   Plug 'mattn/emmet-vim'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()

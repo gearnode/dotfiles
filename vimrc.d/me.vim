@@ -37,6 +37,9 @@ let g:indent_guides_auto_colors=0
 hi IndentGuidesEven ctermbg=238
 hi IndentGuidesOdd ctermbg=236
 
+" [Plugin] Git Gutter
+let g:gitgutter_sign_column_always=1
+
 " Formating
 set nowrap
 set autoindent
