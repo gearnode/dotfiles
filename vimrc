@@ -10,7 +10,8 @@ source ~/dotfiles/vimrc.d/me.vim
 " General
 set mouse=a
 set fileencoding=utf-8
-set history=1000
+set history=100
+set hidden
 set splitright " Puts new vsplit windows to the right of the current
 set splitbelow " Puts new split windows to the bottom of the current
 set hlsearch " Highlight search terms
