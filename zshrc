@@ -1,5 +1,6 @@
 autoload -U colors && colors
 
+eval "$(docker-machine env default)"
 PATH="./bin:/usr/local/Cellar/vim/7.4.488/bin:$HOME/.brew/bin:/usr/local/git/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
