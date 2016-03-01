@@ -18,3 +18,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 let mapleader=","
+
+map <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
+map <C-p> :r !pbpaste<CR>
