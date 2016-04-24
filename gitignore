@@ -2,4 +2,5 @@
 .env
 .dump
 .swo
-
+.DS_Store
+.cache
