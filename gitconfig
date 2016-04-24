@@ -9,9 +9,6 @@
 
 [core]
   excludesfile = ~/.gitignore
-
-[apply]
-  whitespace = fix
   editor = /usr/bin/nvim
 
 [merge]
