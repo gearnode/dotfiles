@@ -18,6 +18,8 @@ fi
 # rvm get stable --auto-dotfiles
 rvm requirements
 rvm install ${RUBY_VERSION}
+rvm use ${RUBY_VERSION}
+rvm use ${RUBY_VERSION} --default
 
 for GEM in ${GEMS[@]} ; do
   gem install ${GEM}
