@@ -28,7 +28,6 @@ $> sh install.sh
 - `b` for `bundle`
 
 ## Git
-
 Change email and name for gitconfiguration
 
 - Display log with `g l`
@@ -38,3 +37,12 @@ Change email and name for gitconfiguration
 - Show order tags with `g t`
 - Fetch and prune with `g f`
 - Checkout with `g ck <your branch>`
+
+## Tmux
+Mouse is enable.
+
+- prefix key is `C-a`
+- vertical split `|`
+- horizontal split `-`
+
+You can switch into pannel with `Alt-<up, down, left, right>`
