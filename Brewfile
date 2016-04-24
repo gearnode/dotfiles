@@ -35,4 +35,4 @@ cask 'transmission'
 cask 'github'
 cask 'flux'
 cask 'postgres'
-
+cask 'iterm2'
