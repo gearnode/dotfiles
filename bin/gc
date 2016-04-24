@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Smart git checkout
+
+DEFAULT_BRANCH=master
+
+function gc {
+  if [ -z "$1" ] ; then
+    git checkout ${DEFAULT_BRANCH}
+  else
+    git checkout $1
+  fi
+}

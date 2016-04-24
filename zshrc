@@ -18,11 +18,3 @@ alias 'd'='docker'
 alias 'b'='bundle'
 alias 'h'='heroku'
 
-# smart checkout
-function gc {
-  if [ -z "$1" ]; then
-    git checkout master
-  else
-    git checkout $1
-  fi
-}
