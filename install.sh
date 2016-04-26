@@ -20,6 +20,15 @@ create_symbolic_link() {
 
 set -e
 
+echo "=> check brew presence"
+if test ! $(which brew) ; then
+  echo "=> install homebrew"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  echo "=> install brew cask"
+  brew install caskroom/cask/brew-cask
+fi
+
 echo "=> brew bundle"
 brew bundle
 
