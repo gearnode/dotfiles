@@ -32,5 +32,11 @@ fi
 echo "=> brew bundle"
 brew bundle
 
+echo "=> brew cleanup"
+brew cleanup
+
+echo "=> brew cask cleanup"
+brew cask cleanup
+
 echo "=> create symbolic link"
 create_symbolic_link
