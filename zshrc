@@ -4,6 +4,7 @@ export CLICOLOR=true
 
 export PATH="$PATH:$HOME/.rvm/bin" 
 export NVM_DIR="$HOME/.nvm"
+export PATH="$HOME/dotfiles/bin:$PATH"
 
 # Load RVM, NVM, Kiex, Travis
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
