@@ -12,9 +12,18 @@ DOTFILES=(
   vimrc
   tmux.conf
 )
+
+SCRIPT_FILES=($(ls ./script))
+
 create_symbolic_link() {
   for FILE in ${DOTFILES[@]} ; do
     ln -fs ${DOTFILES_ROOT}/${FILE} ~/.${FILE}
+  done
+}
+
+run_all_script() {
+  for FILE in ${SCRIPT_FILES[@]} ; do
+    cat ${DOTFILES_ROOT}/script/${FILE} | while read installer ; do sh -c "${installer}" ; done
   done
 }
 
@@ -40,3 +49,6 @@ brew cask cleanup
 
 echo "=> create symbolic link"
 create_symbolic_link
+
+echo "=> Run all script"
+run_all_script()
