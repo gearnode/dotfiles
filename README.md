@@ -26,6 +26,7 @@ $> ./install.sh
 - `v` for `vim`
 - `d` for `docker`
 - `b` for `bundle`
+- `tat` for `tmux attach -t`
 
 ## Git
 Change email and name for gitconfiguration
