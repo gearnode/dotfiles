@@ -41,6 +41,7 @@ alias 'v'='vim'
 alias 'd'='docker'
 alias 'b'='bundle'
 alias 'h'='heroku'
+alias 't'='tmux'
 alias 'tat'='tmux attach -t'
 
 
