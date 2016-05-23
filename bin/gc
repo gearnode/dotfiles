@@ -7,5 +7,5 @@ DEFAULT_BRANCH=master
 if [ -z "$1" ] ; then
   git checkout ${DEFAULT_BRANCH}
 else
-  git checkout -b $1
+  git checkout $1
 fi
