@@ -25,6 +25,7 @@ brew 'elixir'
 brew 'tmux'
 brew 'tree'
 brew 'python3'
+brew 'pgcli'
 
 cask 'atom'
 cask 'vlc'
