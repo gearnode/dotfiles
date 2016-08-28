@@ -1,8 +1,8 @@
 # Set defaut editor
-export EDITOR=nvim
+export EDITOR=vim
 export CLICOLOR=true
 
-export PATH="$PATH:$HOME/.rvm/bin" 
+export PATH="$PATH:$HOME/.rvm/bin"
 export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/dotfiles/bin:$PATH"
 
@@ -56,5 +56,4 @@ compdef g='git'
 autoload -U colors && colors
 
 PS1="%{$fg[magenta]%}%n% %{$fg[white]%}@%{$fg[yellow]%}%m% %{$fg[white]%} in%{$fg[green]%} %~ %{$fg[white]%}%{$reset_color%}$ "
-
 
