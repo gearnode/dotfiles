@@ -44,6 +44,8 @@ alias 'h'='heroku'
 alias 't'='tmux'
 alias 'tat'='tmux attach -t'
 
+# Emacs alias
+bindkey -e
 
 # Autocomplete
 autoload -U compinit && compinit
