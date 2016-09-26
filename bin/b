@@ -1,0 +1,11 @@
+# Thanks at @holman (https://github.com/holman/dotfiles/blob/master/bin/e)
+#!/bin/sh
+#
+# Quick shortcut to bundle or install it.
+
+if test ! $(which bundle) ; then
+  echo "=> install bundle"
+  gem install bundle
+fi
+bundle
+
