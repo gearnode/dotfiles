@@ -9,7 +9,7 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor = /usr/bin/nvim
+  editor = /usr/local/bin/vim
 
 [merge]
   log = true
