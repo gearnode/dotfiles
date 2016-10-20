@@ -42,6 +42,7 @@ alias 'd'='docker'
 alias 'h'='heroku'
 alias 't'='tmux'
 alias 'tat'='tmux attach -t'
+alias 'dnsclear'='sudo killall -HUP mDNSResponder'
 
 # Emacs alias
 bindkey -e
