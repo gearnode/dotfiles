@@ -1,5 +1,3 @@
-cask_args appdir: '/Applications'
-
 tap 'homebrew/bundle'
 
 brew 'openssl'
@@ -13,7 +11,7 @@ brew 'vim'
 brew 'git'
 brew 'zsh'
 brew 'docker'
-brew 'jq' # JSON Parser
+brew 'jq'
 brew 'erlang'
 brew 'elixir'
 brew 'tmux'
@@ -24,3 +22,16 @@ brew 'ag'
 brew 'fzf'
 brew 'rbenv'
 brew 'tmate'
+
+cask_args appdir: '/Applications'
+tap 'caskroom/cask'
+
+cask 'google-chrome'
+cask 'slack'
+cask 'docker'
+cask 'flux'
+cask 'telegram'
+cask 'transmission'
+cask 'vlc'
+cask 'steam'
+cask 'dashlane'
