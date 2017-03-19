@@ -1,11 +1,12 @@
 [alias]
-  l = log --pretty=oneline --graph --abbrev-commit
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   s = status -s
   b = branch -a
   cm = commit -m
   t = tag --sort version:refname
   f = fetch --prune
   ck = checkout
+  rull = pull --rebase
 
 [core]
   excludesfile = ~/.gitignore
