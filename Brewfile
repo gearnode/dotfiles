@@ -26,6 +26,7 @@ brew 'tmate'
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 
+cask 'java'
 cask 'google-chrome'
 cask 'slack'
 cask 'docker'
@@ -35,3 +36,5 @@ cask 'transmission'
 cask 'vlc'
 cask 'steam'
 cask 'dashlane'
+
+brew 'scala'
