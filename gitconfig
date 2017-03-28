@@ -6,6 +6,7 @@
   t = tag --sort version:refname
   f = fetch --prune
   ck = checkout
+  pf = push -f
   pr = pull --rebase
 
 [core]
