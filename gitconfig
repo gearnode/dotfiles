@@ -8,6 +8,7 @@
   ck = checkout
   pf = push -f
   pr = pull --rebase
+  wip = commit -a -m 'save wip'
 
 [core]
   excludesfile = ~/.gitignore
