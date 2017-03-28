@@ -9,6 +9,8 @@
   pf = push -f
   pr = pull --rebase
   wip = commit -a -m 'save wip'
+  bd = branch -d
+  bdf = branch -D
 
 [core]
   excludesfile = ~/.gitignore
