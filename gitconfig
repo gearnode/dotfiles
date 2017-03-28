@@ -6,7 +6,7 @@
   t = tag --sort version:refname
   f = fetch --prune
   ck = checkout
-  rull = pull --rebase
+  pr = pull --rebase
 
 [core]
   excludesfile = ~/.gitignore
