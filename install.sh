@@ -1,56 +1,41 @@
-#!/bin/sh
+#!/bin/bash
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-chsh -s /bin/zsh
+echo -e "\033[34m==>\033[0m Use ZSH by default"
+if [ "$SHELL" != "/bin/zsh" ]; then
+  chsh -s /bin/zsh
+fi
 
-DOTFILES_ROOT=$(pwd -P)
+DOTFILES_PATH=$(pwd -P)
 
-DOTFILES=(
-  gemrc
-  gitconfig
-  gitignore
-  zshrc
-  vimrc
-  tmux.conf
-)
-
-SCRIPT_FILES=($(ls ./script))
+DOTFILES=(gemrc gitconfig gitignore zshrc vimrc tmux.conf)
 
 create_symbolic_link() {
   for FILE in ${DOTFILES[@]} ; do
-    ln -fs ${DOTFILES_ROOT}/${FILE} ~/.${FILE}
-  done
-}
-
-run_all_script() {
-  for FILE in ${SCRIPT_FILES[@]} ; do
-    cat ${DOTFILES_ROOT}/script/${FILE} | while read installer ; do sh -c "${installer}" ; done
+    ln -fs ${DOTFILES_PATH}/${FILE} ~/.${FILE}
   done
 }
 
 set -e
 
-echo "=> check brew presence"
+echo -e "\033[34m==>\033[0m check brew presence"
 if test ! $(which brew) ; then
-  echo "=> install homebrew"
+  echo -e "\033[32mInstalling Homebrew\033[0m"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  echo "=> install brew cask"
+  echo -e "\033[32mInstalling Cask\033[0m"
   brew install caskroom/cask/brew-cask
 fi
 
-echo "=> brew bundle"
+echo -e "\033[34m==>\033[0m brew bundle"
 brew bundle
 
-echo "=> brew cleanup"
+echo -e "\033[34m==>\033[0m brew cleanup"
 brew cleanup
 
-echo "=> brew cask cleanup"
+echo -e "\033[34m==>\033[0m brew cask cleanup"
 brew cask cleanup
 
-echo "=> create symbolic link"
+echo -e "\033[34m==>\033[0m link configurations"
 create_symbolic_link
-
-echo "=> Run all script"
-run_all_script()
