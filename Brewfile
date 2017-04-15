@@ -36,5 +36,6 @@ cask 'transmission'
 cask 'vlc'
 cask 'steam'
 cask 'dashlane'
+cask 'spotify'
 
 brew 'scala'
