@@ -2,7 +2,7 @@
   l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   s = status -s
   b = branch -a
-  cm = commit -m
+  cm = commit
   t = tag --sort version:refname
   f = fetch --prune
   ck = checkout
@@ -21,9 +21,16 @@
 
 [color]
   ui = auto
+  branch = auto
+  diff = auto
+  status = auto
+
+[rebase]
+  stat = true
 
 [user]
   email = bfrimin@student.42.fr
   name = Gearnode
+
 [push]
   default = simple
