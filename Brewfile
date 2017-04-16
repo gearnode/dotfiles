@@ -22,6 +22,7 @@ brew 'ag'
 brew 'fzf'
 brew 'rbenv'
 brew 'tmate'
+brew 'htop'
 
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
