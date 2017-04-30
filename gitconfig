@@ -11,6 +11,7 @@
   wip = commit -a -m 'save wip'
   bd = branch -d
   bdf = branch -D
+  wtf = "!cat ~/.gitconfig"
 
 [core]
   excludesfile = ~/.gitignore
