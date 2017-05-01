@@ -18,6 +18,7 @@ DOTFILES=(
   tmux.conf
   irbrc
   psqlrc
+  curlrc
 )
 
 DOTFILES=(gemrc gitconfig gitignore zshrc vimrc tmux.conf)
