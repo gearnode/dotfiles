@@ -15,6 +15,9 @@
   wip = commit -a -m 'save wip'
   wtf = "!cat ~/.gitconfig"
 
+[commit]
+  gpgsign = true
+
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
@@ -43,6 +46,10 @@
 [user]
   email = friminb@gmail.com
   name = Gearnode
+	signingkey = 77D9D972934C9787
 
 [push]
   default = current
+
+[gpg]
+	program = gpg2
