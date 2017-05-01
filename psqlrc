@@ -6,6 +6,7 @@
 
 \set VERBOSITY verbose
 
+\set reload 'select pg_reload_conf();'
 
 \set extensions 'select * from pg_available_extensions;'
 
@@ -48,22 +49,23 @@
 \set QUIET 0
 
 \echo 'Administrative queries:\n'
-\echo '\t:extenssions\t-- Server available extenssions'
-\echo '\t:version\t-- Server version'
-\echo '\t:settings\t-- Server settings'
-\echo '\t:conninfo\t-- Server connections'
 \echo '\t:activity\t-- Server activity'
-\echo '\t:locks\t\t-- Lock info'
-\echo '\t:waits\t\t-- Waiting queires'
+\echo '\t:conninfo\t-- Server connections'
 \echo '\t:dbsize\t\t-- Database Size'
+\echo '\t:reload\t-- Reload Postgres server configuration'
+\echo '\t:extenssions\t-- Server available extenssions'
+\echo '\t:locks\t\t-- Lock info'
+\echo '\t:settings\t-- Server settings'
 \echo '\t:tablesize\t-- Tables Size'
 \echo '\t:uptime\t\t-- Server uptime'
+\echo '\t:version\t-- Server version'
+\echo '\t:waits\t\t-- Waiting queires'
 \echo '\t:wtf\t\t-- Help Menu'
 \echo '\t\\h\t\t-- Help with SQL commands'
 \echo '\t\\?\t\t-- Help with psql commands'
 \echo '\t\\q\t\t-- Exit psql\n'
 
 \echo 'Development queries:\n'
-\echo '\t:sp\t\t-- Current Search Path'
 \echo '\t:cl\t\t-- Clear screen'
+\echo '\t:sp\t\t-- Current Search Path'
 \echo '\t\\e\t\t-- Open vim editor\n\n'
