@@ -11,10 +11,21 @@
   wip = commit -a -m 'save wip'
   bd = branch -d
   bdf = branch -D
+  wtf = "!cat ~/.gitconfig"
+  d = difftool
 
 [core]
   excludesfile = ~/.gitignore
   editor = /usr/local/bin/vim
+
+[difftool]
+  prompt = true
+
+[difftool.vim]
+  cmd = vim -d $LOCAL $REMOTE
+
+[diff]
+  tool = vim
 
 [merge]
   log = true

@@ -9,6 +9,18 @@ fi
 
 DOTFILES_PATH=$(pwd -P)
 
+DOTFILES=(
+  gemrc
+  gitconfig
+  gitignore
+  zshrc
+  vimrc
+  tmux.conf
+  irbrc
+  psqlrc
+  curlrc
+)
+
 DOTFILES=(gemrc gitconfig gitignore zshrc vimrc tmux.conf)
 
 create_symbolic_link() {

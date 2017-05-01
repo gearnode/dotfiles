@@ -78,3 +78,6 @@ __load_rb_configuration
 __load_dotfile_builtins
 __load_ps1
 __active_autocomplete
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

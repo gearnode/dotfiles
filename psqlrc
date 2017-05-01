@@ -1,0 +1,68 @@
+\set QUIET 1
+
+\set HISTSIZE 2000
+
+
+\set VERBOSITY verbose
+
+
+\set extensions 'select * from pg_available_extensions;'
+
+\set version 'SELECT version();'
+
+\set settings 'select name, setting,unit,context from pg_settings;'
+
+\set conninfo 'select usename, count(*) from pg_stat_activity group by usename;'
+
+\set activity 'select datname, pid, usename, application_name,client_addr, client_hostname, client_port, query, state from pg_stat_activity;'
+
+\set locks  'SELECT bl.pid AS blocked_pid, a.usename AS blocked_user, kl.pid AS blocking_pid, ka.usename AS blocking_user, a.query AS blocked_statement FROM pg_catalog.pg_locks bl JOIN pg_catalog.pg_stat_activity a ON bl.pid = a.pid JOIN pg_catalog.pg_locks kl JOIN pg_catalog.pg_stat_activity ka ON kl.pid = ka.pid ON bl.transactionid = kl.transactionid AND bl.pid != kl.pid WHERE NOT bl.granted;'
+
+\set waits 'SELECT pg_stat_activity.pid, pg_stat_activity.query, pg_stat_activity.waiting, now() - pg_stat_activity.query_start AS \"totaltime\", pg_stat_activity.backend_start FROM pg_stat_activity WHERE pg_stat_activity.query !~ \'%IDLE%\'::text AND pg_stat_activity.waiting = true;'
+
+\set dbsize 'SELECT datname, pg_size_pretty(pg_database_size(datname)) db_size FROM pg_database ORDER BY db_size;'
+
+\set tablesize 'SELECT nspname || \'.\' || relname AS \"relation\", pg_size_pretty(pg_relation_size(C.oid)) AS "size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN (\'pg_catalog\', \'information_schema\') ORDER BY pg_relation_size(C.oid) DESC LIMIT 40;'
+
+\set uptime 'select now() - pg_postmaster_start_time() AS uptime;'
+
+\set wtf '\\i ~/.psqlrc'
+
+\set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
+
+\set PROMPT2 '%M %n@%/%R %# '
+
+\set sp 'SHOW search_path;'
+
+\set clear '\\! clear;'
+
+\set COMP_KEYWORD_CASE upper
+
+\timing
+
+\x auto
+
+\pset null '(null)'
+
+\set QUIET 0
+
+\echo 'Administrative queries:\n'
+\echo '\t:extenssions\t-- Server available extenssions'
+\echo '\t:version\t-- Server version'
+\echo '\t:settings\t-- Server settings'
+\echo '\t:conninfo\t-- Server connections'
+\echo '\t:activity\t-- Server activity'
+\echo '\t:locks\t\t-- Lock info'
+\echo '\t:waits\t\t-- Waiting queires'
+\echo '\t:dbsize\t\t-- Database Size'
+\echo '\t:tablesize\t-- Tables Size'
+\echo '\t:uptime\t\t-- Server uptime'
+\echo '\t:wtf\t\t-- Help Menu'
+\echo '\t\\h\t\t-- Help with SQL commands'
+\echo '\t\\?\t\t-- Help with psql commands'
+\echo '\t\\q\t\t-- Exit psql\n'
+
+\echo 'Development queries:\n'
+\echo '\t:sp\t\t-- Current Search Path'
+\echo '\t:clear\t\t-- Clear screen'
+\echo '\t\\e\t\t-- Open vim editor\n\n'
