@@ -35,10 +35,6 @@ function __load_history_configuration {
   SAVEHIST=10000
 }
 
-function current_dir {
-
-}
-
 # GPG TTY
 export GPG_TTY=$(tty)
 
@@ -75,7 +71,6 @@ alias 'dc'='docker-compose'
 alias 'h'='heroku'
 alias 't'='tmux'
 alias 'tat'='tmux attach -t'
-alias 'dnsclear'='sudo killall -HUP mDNSResponder'
 
 bindkey -e
 autoload -U colors && colors
