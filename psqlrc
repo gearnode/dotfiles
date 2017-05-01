@@ -1,6 +1,7 @@
 \set QUIET 1
 
 \set HISTSIZE 2000
+\set HISTFILE ~/.psql_history- :DBNAME
 
 
 \set VERBOSITY verbose
