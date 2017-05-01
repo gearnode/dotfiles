@@ -19,9 +19,8 @@ DOTFILES=(
   irbrc
   psqlrc
   curlrc
+  agignore
 )
-
-DOTFILES=(gemrc gitconfig gitignore zshrc vimrc tmux.conf)
 
 create_symbolic_link() {
   for FILE in ${DOTFILES[@]} ; do

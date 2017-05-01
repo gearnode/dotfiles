@@ -21,10 +21,10 @@ cask 'transmission'
 cask 'vlc'
 
 brew 'ack'
-brew 'coreutils'
 brew 'ag'
 brew 'autoconf'
 brew 'automake'
+brew 'coreutils'
 brew 'crystal-lang'
 brew 'ctop'
 brew 'curl'
@@ -67,6 +67,7 @@ brew 'unrar'
 brew 'vim'
 brew 'wget'
 brew 'zsh'
+
 brew 'qt@5.5', link: :force, overwrite: true
 # --overwrite: overwrite any Qt4 files that might be there
 # --force: required because Qt is keg-only
