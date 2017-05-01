@@ -39,6 +39,9 @@ function current_dir {
 
 }
 
+# GPG TTY
+export GPG_TTY=$(tty)
+
 CLICOLOR=true
 LC_CTYPE=en_US.UTF-8
 
