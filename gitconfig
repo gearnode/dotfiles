@@ -1,22 +1,23 @@
 [alias]
-  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  s = status -s
   b = branch -a
-  cm = commit
-  t = tag --sort version:refname
-  f = fetch --prune
-  ck = checkout
-  pf = push -f
-  pr = pull --rebase
-  wip = commit -a -m 'save wip'
   bd = branch -d
   bdf = branch -D
-  wtf = "!cat ~/.gitconfig"
+  br = branch
+  ck = checkout
+  cm = commit
   d = difftool
+  f = fetch --all --prune --tags
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  pl = pull
+  ps = push
+  s = status -s
+  t = tag --sort version:refname
+  wip = commit -a -m 'save wip'
+  wtf = "!cat ~/.gitconfig"
 
 [core]
-  excludesfile = ~/.gitignore
   editor = /usr/local/bin/vim
+  excludesfile = ~/.gitignore
 
 [difftool]
   prompt = true
@@ -31,17 +32,17 @@
   log = true
 
 [color]
-  ui = auto
   branch = auto
   diff = auto
   status = auto
+  ui = auto
 
 [rebase]
   stat = true
 
 [user]
-  email = bfrimin@student.42.fr
+  email = friminb@gmail.com
   name = Gearnode
 
 [push]
-  default = simple
+  default = current
