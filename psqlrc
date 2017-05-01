@@ -34,7 +34,7 @@
 
 \set sp 'SHOW search_path;'
 
-\set clear '\\! clear;'
+\set cl '\\! clear;'
 
 \set COMP_KEYWORD_CASE upper
 
@@ -64,5 +64,5 @@
 
 \echo 'Development queries:\n'
 \echo '\t:sp\t\t-- Current Search Path'
-\echo '\t:clear\t\t-- Clear screen'
+\echo '\t:cl\t\t-- Clear screen'
 \echo '\t\\e\t\t-- Open vim editor\n\n'
