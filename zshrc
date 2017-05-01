@@ -42,6 +42,11 @@ function current_dir {
 # GPG TTY
 export GPG_TTY=$(tty)
 
+export PGSYSCONFDIR=$HOME
+# Set default host for PSQL
+# Add more host on .pg_service.conf
+export PGSERVICE=docker
+
 CLICOLOR=true
 LC_CTYPE=en_US.UTF-8
 

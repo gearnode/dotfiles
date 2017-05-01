@@ -20,6 +20,7 @@ DOTFILES=(
   psqlrc
   curlrc
   agignore
+  pg_service.conf
 )
 
 create_symbolic_link() {
