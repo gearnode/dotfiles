@@ -65,7 +65,7 @@ setopt COMPLETE_ALIASES
 
 alias 'l'='ls -lF'
 alias 'la'='ls -laF'
-alias 'g'='git'
+alias 'g'='hub'
 alias 'd'='docker'
 alias 'dc'='docker-compose'
 alias 'h'='heroku'
