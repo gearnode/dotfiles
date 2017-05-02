@@ -52,7 +52,7 @@
 \echo '\t:activity\t-- Server activity'
 \echo '\t:conninfo\t-- Server connections'
 \echo '\t:dbsize\t\t-- Database Size'
-\echo '\t:reload\t-- Reload Postgres server configuration'
+\echo '\t:reload\t\t-- Reload Postgres server configuration'
 \echo '\t:extenssions\t-- Server available extenssions'
 \echo '\t:locks\t\t-- Lock info'
 \echo '\t:settings\t-- Server settings'
