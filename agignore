@@ -7,8 +7,8 @@ coverage
 public/assets
 tags
 build
-_build
 vendor/bundle
+deps
 
 *.png
 *.jpg
