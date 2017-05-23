@@ -43,6 +43,8 @@ export PGSYSCONFDIR=$HOME
 # Add more host on .pg_service.conf
 export PGSERVICE=docker
 
+export FZF_CTRL_T_COMMAND='ag -g ""'
+
 CLICOLOR=true
 LC_CTYPE=en_US.UTF-8
 
