@@ -14,6 +14,7 @@
   t = tag --sort version:refname
   wip = commit -a -m 'save wip'
   wtf = "!cat ~/.gitconfig"
+  clr = "!git-remove-merged-branch"
 
 [commit]
   gpgsign = true
