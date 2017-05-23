@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IMAGES=$(\docker imnages -q)
+
+if [ -s IMAGES ]
+then
+  \docker rmi $IMAGES
+else
+  echo "No images to remove"
+fi
+

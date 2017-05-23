@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CONTAINERS=$(\docker ps -aq)
+
+if [ -z CONTAINERS ]
+then
+  \docker rm $CONTAINERS
+else
+  echo "No containers to remove"
+fi
