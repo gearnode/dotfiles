@@ -1,8 +1,8 @@
 #!/bin/bash
 
-IMAGES=$(\docker imnages -q)
+IMAGES=$(\docker images -q)
 
-if [ -s IMAGES ]
+if [ -z $IMAGES ]
 then
   \docker rmi $IMAGES
 else
