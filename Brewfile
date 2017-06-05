@@ -67,6 +67,7 @@ brew 'tree'
 brew 'unrar'
 brew 'vim'
 brew 'wget'
+brew 'yarn'
 brew 'zsh'
 
 brew 'qt@5.5', link: :force, overwrite: true
