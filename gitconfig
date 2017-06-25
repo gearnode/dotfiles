@@ -6,7 +6,7 @@
   ck = checkout
   cm = commit
   d = difftool
-  f = fetch --all --prune --tags
+  f = fetch --prune --tags
   l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   pl = pull
   ps = push
