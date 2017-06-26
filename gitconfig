@@ -15,6 +15,7 @@
   wip = commit -a -m 'save wip'
   wtf = "!cat ~/.gitconfig"
   clr = "!git-remove-merged-branch"
+  ci = "!hub ci-status"
 
 [commit]
   gpgsign = true
