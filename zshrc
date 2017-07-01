@@ -44,6 +44,8 @@ export PGSYSCONFDIR=$HOME
 export PGSERVICE=docker
 
 export FZF_CTRL_T_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 
 CLICOLOR=true
 LC_CTYPE=en_US.UTF-8
