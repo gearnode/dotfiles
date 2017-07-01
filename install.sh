@@ -21,6 +21,7 @@ DOTFILES=(
   curlrc
   agignore
   pg_service.conf
+  pryrc
 )
 
 create_symbolic_link() {

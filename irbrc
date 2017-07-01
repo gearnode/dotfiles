@@ -1,6 +1,14 @@
 #!/usr/bin/ruby
-require 'irb/completion'
-require 'irb/ext/save-history'
+
+if defined?(IRB)
+  require 'irb/completion'
+  require 'irb/ext/save-history'
+
+  IRB.conf[:SAVE_HISTORY] = 1000
+  IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+  IRB.conf[:PROMPT_MODE] = :SIMPLE
+  IRB.conf[:AUTO_INDENT] = true
+end
 
 %w[rubygems pp ostruct].each do |gem|
   begin
@@ -9,11 +17,6 @@ require 'irb/ext/save-history'
     puts "Failed to load #{gem} gem."
   end
 end
-
-IRB.conf[:SAVE_HISTORY] = 1000
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
-IRB.conf[:PROMPT_MODE] = :SIMPLE
-IRB.conf[:AUTO_INDENT] = true
 
 File.exist?(__FILE__ + '/.extend-irbrc') && load(__FILE__ + '/.extend-irbrc')
 
