@@ -10,7 +10,7 @@ if defined?(IRB)
   IRB.conf[:AUTO_INDENT] = true
 end
 
-%w[rubygems pp ostruct].each do |gem|
+%w[json rubygems pp ostruct].each do |gem|
   begin
     require gem
   rescue LoadError
