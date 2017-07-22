@@ -12,6 +12,7 @@ DOTFILES=(
   agignore
   pg_service.conf
   pryrc
+  iex.exs
 )
 
 __lnfs() {
