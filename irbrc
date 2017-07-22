@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 if defined?(IRB)
   require 'irb/completion'
   require 'irb/ext/save-history'
