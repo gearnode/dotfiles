@@ -48,10 +48,10 @@
 [user]
   email = friminb@gmail.com
   name = Gearnode
-	signingkey = D16ACD89C46BD04A
+  signingkey = D16ACD89C46BD04A
 
 [push]
   default = current
 
 [gpg]
-	program = gpg2
+  program = gpg2
