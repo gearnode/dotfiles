@@ -1,0 +1,29 @@
+#!/bin/bash
+
+DOTFILES=(
+  gemrc
+  gitconfig
+  gitignore
+  zshrc
+  tmux.conf
+  irbrc
+  psqlrc
+  curlrc
+  agignore
+  pg_service.conf
+  pryrc
+)
+
+__lnfs() {
+  local dotfiles_path=$(pwd -P)
+  ln -fs "$dotfiles_path/$1" ~/.$1
+}
+
+__do_link() {
+  for FILE in ${DOTFILES[@]} ; do
+    echo "\033[34m==>\033[0m Linking $FILE"
+    __lnfs ${FILE}
+  done
+}
+
+__do_link
