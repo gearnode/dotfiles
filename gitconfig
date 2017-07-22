@@ -48,7 +48,7 @@
 [user]
   email = friminb@gmail.com
   name = Gearnode
-	signingkey = 77D9D972934C9787
+	signingkey = D16ACD89C46BD04A
 
 [push]
   default = current
