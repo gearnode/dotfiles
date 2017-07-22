@@ -7,5 +7,5 @@ My personal config files.
 $> cd ~
 $> git clone https://github.com/gearnode/dotfiles.git
 $> cd dotfiles
-$> ./install.sh
+$> make install
 ```
