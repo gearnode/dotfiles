@@ -13,6 +13,7 @@ DOTFILES=(
   pg_service.conf
   pryrc
   iex.exs
+  gnupg
 )
 
 __lnfs() {
