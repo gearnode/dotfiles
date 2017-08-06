@@ -1,2 +1,9 @@
 *~
 *.swp
+
+# GPG artifact
+*.d
+*.kbx
+*.gpg
+*.status
+*.gpg-v21-migrated
