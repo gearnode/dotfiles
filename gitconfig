@@ -16,6 +16,7 @@
   wtf = "!cat ~/.gitconfig"
   clr = "!git-remove-merged-branch"
   ci = "!hub ci-status"
+  rb = "!git checkout master && git pull origin master && git checkout - && git rebase master"
 
 [commit]
   gpgsign = true
