@@ -59,6 +59,7 @@ alias k=kubectl
 alias kns=kubens
 alias kctx=kubectx
 alias h=helm
+alias t=terraform
 
 #
 # Configures history options
@@ -183,6 +184,7 @@ setopt NO_CLOBBER
 #
 # enables fish-shell like syntax highlighting
 #
+
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(${zhighlighters[@]})
 local file=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f $file ] && source $file
@@ -239,10 +241,12 @@ unset ssh_{sock,env}
 #
 # enables fzf
 #
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #
 # configures node version manager
 #
+
  export NVM_DIR="$HOME/.nvm"
  [ -f /usr/local/opt/nvm/nvm.sh ] && source /usr/local/opt/nvm/nvm.sh
