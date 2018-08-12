@@ -33,7 +33,7 @@ export LC_CTYPE=en_US.UTF-8
 #
 # Configures
 #
-export PATH=$PATH:/usr/local/sbin:$HOME/dotefiles/bin:$HOME/.rbenv/shims:$GOPATH/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/dotfiles/bin:$HOME/.rbenv/shims:$GOPATH/bin
 
 #
 # Configures default editor
@@ -183,9 +183,10 @@ setopt NO_CLOBBER
 #
 # enables fish-shell like syntax highlighting
 #
-
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(${zhighlighters[@]})
 local file=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f $file ] && source $file
+local file=/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $file ] && source $file
 
 #
@@ -235,7 +236,13 @@ fi
 
 unset ssh_{sock,env}
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-
+#
+# enables fzf
+#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#
+# configures node version manager
+#
+ export NVM_DIR="$HOME/.nvm"
+ [ -f /usr/local/opt/nvm/nvm.sh ] && source /usr/local/opt/nvm/nvm.sh
