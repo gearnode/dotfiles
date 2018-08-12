@@ -18,9 +18,6 @@
   ci = "!hub ci-status"
   rb = "!git-rebase-master-branch"
 
-[commit]
-  gpgsign = true
-
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
@@ -49,10 +46,6 @@
 [user]
   email = friminb@gmail.com
   name = Gearnode
-  signingkey = D16ACD89C46BD04A
 
 [push]
   default = current
-
-[gpg]
-  program = gpg2
