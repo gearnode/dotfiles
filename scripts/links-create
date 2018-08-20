@@ -23,7 +23,7 @@ __lnfs() {
 
 __do_link() {
   for FILE in ${DOTFILES[@]} ; do
-    echo "\033[34m==>\033[0m Linking $FILE"
+    printf "\033[34m==>\033[0m Linking $FILE\n"
     __lnfs ${FILE}
   done
 }
