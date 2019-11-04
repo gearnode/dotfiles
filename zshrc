@@ -1,3 +1,5 @@
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
 zssh_ids=(github_rsa)
 
 fpath=(~/.zsh/completion $fpath)
@@ -14,6 +16,8 @@ bindkey -e
 #
 # Configures custom autocompletes
 #
+autoload -Uz compinit && compinit -i
+
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
@@ -21,8 +25,6 @@ fi
 if [ $commands[helm] ]; then
   source <(helm completion zsh)
 fi
-
-autoload -Uz compinit && compinit -i
 
 autoload -U colors && colors
 
@@ -33,7 +35,9 @@ export LC_CTYPE=en_US.UTF-8
 #
 # Configures
 #
-export PATH=$PATH:/usr/local/sbin:$HOME/dotfiles/bin:$HOME/.rbenv/shims:$GOPATH/bin
+export GOPATH=$(go env GOPATH)
+export KUBECONFIG="${KUBECONFIG:-$HOME/.kube/config}"
+export PATH=$HOME/.rbenv/shims:$PATH:$HOME/dotfiles/bin:$HOME/go/bin
 
 #
 # Configures default editor
@@ -60,6 +64,7 @@ alias kns=kubens
 alias kctx=kubectx
 alias h=helm
 alias t=terraform
+alias cat=bat
 
 #
 # Configures history options
@@ -230,7 +235,7 @@ fi
 # load ids
 if ssh-add -l 2>&1 | grep -q 'no identities'; then
   if (( ${#zssh_ids} > 0 )); then
-    ssh-add "${HOME}/.ssh/${^zssh_ids[@]}" 2> /dev/null
+    ssh-add -K "${HOME}/.ssh/${^zssh_ids[@]}" 2> /dev/null
   else
     ssh-add 2> /dev/null
   fi
