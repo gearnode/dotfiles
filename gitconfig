@@ -19,7 +19,7 @@
   rb = "!git-rebase-master-branch"
 
 [core]
-  editor = /usr/local/bin/vim
+  editor = /opt/local/bin/vim
   excludesfile = ~/.gitignore
 
 [difftool]
@@ -44,8 +44,14 @@
   stat = true
 
 [user]
-  email = friminb@gmail.com
+  email = bryan@frimin.fr
   name = Gearnode
 
 [push]
   default = current
+
+[protocol]
+  version = 2
+
+[url "ssh://git@github.com/jobteaser/"]
+  insteadOf = https://github.com/jobteaser/

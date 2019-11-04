@@ -7,3 +7,4 @@
 *.swp
 .extend-irbrc
 vendor/bundle
+.#*
