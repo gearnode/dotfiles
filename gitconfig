@@ -53,7 +53,9 @@
 [protocol]
   version = 2
 
+# Go package manager sucks
 [url "ssh://git@github.com/jobteaser/"]
   insteadOf = https://github.com/jobteaser/
+
 [github]
-	user = gearnode
+  user = gearnode
