@@ -55,3 +55,5 @@
 
 [url "ssh://git@github.com/jobteaser/"]
   insteadOf = https://github.com/jobteaser/
+[github]
+	user = gearnode
