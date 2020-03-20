@@ -1,3 +1,0 @@
-#!/bin/bash
-
-git branch --no-contains master --format='%(refname:short)' --merged master | xargs git branch -d
