@@ -1,0 +1,4 @@
+fatal() {
+    printf "$*\n" >/dev/stderr
+    exit 1
+}
