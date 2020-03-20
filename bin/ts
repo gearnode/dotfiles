@@ -1,5 +1,0 @@
-#/bin/sh
-#
-# Create timestamp
-
-date +%s

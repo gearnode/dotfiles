@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# dot
-
-echo "=> Upgrade brew"
-brew update
-
-echo "=> Source zshrc"
-source ~/.zshrc

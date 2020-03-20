@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+containers=$(docker ps -qa)
+
+if [ -z $containers ]; then
+  docker rm $containers
+fi

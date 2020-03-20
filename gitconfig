@@ -15,8 +15,6 @@
   wip = commit -a -m 'save wip'
   wtf = "!cat ~/.gitconfig"
   clr = "!git-remove-merged-branch"
-  ci = "!hub ci-status"
-  rb = "!git-rebase-master-branch"
 
 [core]
   editor = /opt/local/bin/vim

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# active lock screen
-pmset displaysleepnow

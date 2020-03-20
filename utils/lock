@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+if [ "$(uname)" != "Darwin" ]; then
+  echo "$0 works only for macos"
+  exit 1
+fi
+
+# active lock screen
+pmset displaysleepnow
