@@ -1,0 +1,10 @@
+application/zip; unzip -c %s
+application/gzip; zcat %s
+
+application/x-msexcel; libreoffice --calc %s
+application/ms-exc; libreoffice --calc %s
+application/excel; libreoffice --calc %s
+application/msexcel; libreoffice --calc %s
+application/vnd.ms-exc; libreoffice --calc %s
+application/vnd.ms-excel; libreoffice --calc %s
+application/msword; libreoffice --writer %s
