@@ -39,7 +39,7 @@ zle -N self-insert url-quote-magic
 
 # Configure go
 export GOPATH=$(go env GOPATH)
-export PATH=$HOME/go/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # Configure erlang
 ERL_AFLAGS="+pc unicode"
