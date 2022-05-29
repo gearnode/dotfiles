@@ -1,0 +1,10 @@
+/.bundle
+.env
+.dump
+.swo
+.DS_Store
+.cache
+*.swp
+.extend-irbrc
+vendor/bundle
+.#*

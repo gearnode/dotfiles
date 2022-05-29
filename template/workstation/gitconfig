@@ -1,0 +1,61 @@
+[alias]
+  b = branch --all
+  bd = branch --delete
+  bdf = branch --delete --force
+  br = branch
+  ck = checkout
+  cm = commit
+  d = difftool
+  f = fetch --prune --tags
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  pl = pull
+  ps = push
+  s = status --short
+  t = tag --sort version:refname
+  wip = commit --all --message "save wip"
+  wtf = "!cat ~/.gitconfig"
+
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+  filemode = true
+
+[init]
+  defaultBranch = master
+
+[diff]
+  tool = vim
+
+[difftool]
+  prompt = true
+
+[difftool.vim]
+  cmd = vim -d $LOCAL $REMOTE
+
+[merge]
+  log = true
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = auto
+
+[rebase]
+  stat = true
+
+[user]
+  email = bryan@frimin.fr
+  name = gearnode
+
+[push]
+  default = current
+
+[protocol]
+  version = 2
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+
+[github]
+  user = gearnode
