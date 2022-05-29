@@ -1,0 +1,13 @@
+PreferredAuthentications publickey
+ForwardAgent yes
+User root
+
+Host github.com
+ForwardAgent no
+User gearnode
+Hostname github.com
+
+Host bastion.frimin.fr
+Host bastion.exograd.net
+Host *.exograd.internal
+ProxyJump bastion.exograd.net
