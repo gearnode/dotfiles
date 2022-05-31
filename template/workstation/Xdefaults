@@ -1,0 +1,23 @@
+Xft.dpi: 314.7
+
+xterm*faceName: "DejaVu Sans Mono"
+xterm*faceSize: 8
+xterm*faceSize1: 10
+xterm*faceSize2: 12
+xterm*faceSize3: 14
+xterm*faceSize4: 16
+xterm*faceSize5: 18
+xterm*faceSize6: 20
+xterm*renderFont: true
+xterm*utf8: 1
+xterm*termName: xterm-256color
+xterm*cursorBlink: 1
+xterm*cursorOffTime: 800
+xterm*saveLines: 100000
+
+! use CLIPBOARD by default
+xterm*selectToClipboard: true
+
+xterm*translation: #override \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
