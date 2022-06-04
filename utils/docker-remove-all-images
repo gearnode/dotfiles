@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-images=$(docker images -q)
-
-if [ -z $images]; then
-  docker rmi $images
-fi
-
