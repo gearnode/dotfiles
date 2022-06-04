@@ -1,4 +1,10 @@
-ZSSH_IDS=(id_ed25519)
+# ===
+# Aliases
+# ===
+alias l="ls -fF"
+alias la="ls -laF"
+alias cat=bat
+alias g=git
 
 # Emacs binding
 bindkey -e
@@ -29,6 +35,7 @@ export CLICOLOR=true
 
 export EDITOR=vim
 export VISUAL=vim
+alias v=vim
 
 # ===
 # Configures history
@@ -198,51 +205,74 @@ source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 # ===
 
 export DOCKER_HOST=tcp://172.16.2.2:3232
+alias d=docker
 
 # ===
 # Configure kubectl
 # ===
 
 source <(kubectl completion zsh)
+alias k=kubectl
 
 # ===
 # SSH
 # ===
-SSH_ENV=/tmp/$USER/ssh-agent.env
-SSH_SOCK=/tmp/$USER/ssh-agent.sock
 
-# start ssh-agent if not already running
-if [[ ! -S $SSH_AUTH_SOCK ]]; then
-    # read environment if possible
-    source $SSH_ENV 2> /dev/null
+start_ssh_agent() {
+    # The path to the environment file.
+    local _ssh_agent_env=/tmp/$USER/ssh-agent.env
 
-    if ! ps -U ${LOGNAME} -o pid,ucomm | grep -q -- "${SSH_AGENT_PID:--1} ssh-agent"; then
-        eval "$(ssh-agent | sed '/^echo /d' | tee ${SSH_ENV})"
+    # The path to the persistent authentication socket.
+    local _ssh_agent_sock=/tmp/$USER/ssh-agent.sock
+
+    # Start ssh-agent if not started.
+    if [[ ! -S "$SSH_AUTH_SOCK" ]]; then
+        # Export environment variables.
+        source "$_ssh_agent_env" 2> /dev/null
+
+        # Start ssh-agent if not started.
+        if ! ps -U "$LOGNAME" -o pid,ucomm | grep -q -- "${SSH_AGENT_PID:--1} ssh-agent"; then
+            mkdir -p "$_ssh_agent_env:h"
+            eval "$(ssh-agent | sed '/^echo /d' | tee "$_ssh_agent_env")"
+        fi
     fi
-fi
 
-# create socket
-if [[ -S $SSH_AUTH_SOCKET && $SSH_AUTH_SOCKET != $SSH_SOCK ]]; then
-    ln -sf $SSH_AUTH_SOCKET $SSH_SOCK
-    export SSH_AUTH_SOCKET=$SSH_SOCK
-fi
-
-# load keys
-if ssh-add -l 2>&1 | grep -q 'no identities'; then
-    if (( ${#ZSSH_IDS} > 0 )); then
-        ssh-add "$HOME/.ssh/${^ZSSH_IDS[@]}" 2> /dev/null
-    else
-        ssh-add 2> /dev/null
+    # Create a persistent SSH authentication socket.
+    if [[ -S "$SSH_AUTH_SOCK" && "$SSH_AUTH_SOCK" != "$_ssh_agent_sock" ]]; then
+        mkdir -p "$_ssh_agent_sock:h"
+        ln -sf "$SSH_AUTH_SOCK" "$_ssh_agent_sock"
+        export SSH_AUTH_SOCK="$_ssh_agent_sock"
     fi
-fi
+}
 
-unset SSH_{ENV,SOCK}
+load_identities() {
+    local _ssh_identities="$@"
 
-# Alias
-alias l="ls -fF"
-alias la="ls -laF"
-alias g=git
-alias d=docker
-alias k=kubectl
-alias cat=bat
-alias v=vim
+    # The path to the SSH directory.
+    local _ssh_dir="$HOME/.ssh"
+
+
+    if ssh-add -l 2>&1 | grep -q 'The agent has no identities'; then
+        # ssh-add has strange requirements for running SSH_ASKPASS, so
+        # we duplicate them here. Essentially, if the other requirements
+        # are met, we redirect stdin from /dev/null in order to meet the
+        # final requirement.
+        #
+        # From ssh-add(1):
+        # If ssh-add needs a passphrase, it will read the passphrase
+        # from the current terminal if it was run from a terminal. If
+        # ssh-add does not have a terminal associated with it but
+        # DISPLAY and SSH_ASKPASS are set, it will execute the program
+        # specified by SSH_ASKPASS and open an X11 window to read the
+        # passphrase.
+
+        if [[ -n "$DISPLAY" && -x "$SSH_ASKPASS" ]]; then
+            ssh-add ${_ssh_identities:+$_ssh_dir/${^_ssh_identities[@]}} < /dev/null 2> /dev/null
+        else
+            ssh-add ${_ssh_identities:+$_ssh_dir/${^_ssh_identities[@]}} 2> /dev/null
+        fi
+    fi
+}
+
+start_ssh_agent
+load_identities id_ed25519
