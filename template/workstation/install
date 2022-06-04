@@ -1,0 +1,65 @@
+#!/bin/sh
+
+pkg install \
+    # shell utils
+    zsh git curl terraform ripgrep jq jo gmake htop gnupg fzf \
+        pngcrush neofetch ipcalc closure-compiler postgresql14-client \
+        docker ImageMagick7 sqlite3 ffmpeg \
+    # system
+    syslog-ng unbound
+    # languages
+    ruby go erlang rust \
+    # editors
+    vim emacs \
+    # X11
+    xorg i3 i3status rofi \
+    # browsers
+    firefox chromium weechat \
+    # musics
+    spotify-qt spotifyd \
+    # office
+    gimp inkscape libreoffice audacity obs-studio \
+    # freebsd port maintainer
+    portfmt portlint \
+    # Linux
+    vm-bhyve grub2-bhyve linux_base-c7 \
+    # others
+    1password-client2 transmission
+
+sysrc clear_tmp_enable=YES
+sysrc dumpdev=AUTO
+
+sysrc ntpd_enable=YES
+
+sysrc moused_enable=YES
+
+sysrc linux_enable=YES
+
+sysrc spotifyd_enable=YES
+
+sysrc pf_enable=YES
+sysrc pflog_enable=YES
+
+sysrc cloned_interfaces=bridge0
+sysrc ifconfig_bridge0_name=vnet0
+sysrc ifconfig_vnet0="inet 172.16.2.1/24 addm net0 up descr vm"
+
+sysrc gateway_enable=YES
+
+sysrc kld_list="vmm"
+sysrc vm_enable=YES
+sysrc vm_dir="zfs:zroot/usr/vm"
+sysrc vm_list="docker"
+sysrc vm_delay="5"
+
+sysrc syslog_ng_enable="YES"
+sysrc syslogd_enable="NO"
+
+cp Xdefaults $HOME/.Xdefaults
+cp gemrc $HOME/.gemrc
+cp gitconfig $HOME/.gitconfig
+cp gitignore $HOME/.gitignore
+cp zshrc $HOME/.zshrc
+cp mailcap $HOME/.mailcap
+cp ripgreprc $HOME/.ripgreprc
+cp pf.conf /etc/pf.conf
