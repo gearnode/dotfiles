@@ -42,8 +42,8 @@ alias v=vim
 # ===
 
 HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 # Save each command’s beginning timestamp (in seconds since the epoch)
 # and the duration (in seconds) to the history file. ‘: <beginning
