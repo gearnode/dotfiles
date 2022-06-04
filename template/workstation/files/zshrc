@@ -3,45 +3,150 @@ ZSSH_IDS=(id_ed25519)
 # Emacs binding
 bindkey -e
 
+# ===
 # Configures prompt
+# ===
+
 autoload -Uz promptinit
 promptinit
 
+# ===
 # Configures custom autocomplete
+# ===
+
 autoload -Uz compinit && compinit -i
+
+# ===
+# Configure CLI color
+# ===
+
 autoload -U colors && colors
 export CLICOLOR=true
 
+# ===
 # Configures default editor
+# ===
+
 export EDITOR=vim
 export VISUAL=vim
 
+# ===
 # Configures history
+# ===
+
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt EXTENDED_HISTORY     # Save timestamps along with commands.
-setopt BANG_HIST            # Perform textual history expansion, csh-style.
-setopt EXTENDED_HISTORY     # Add new history line to the ${HISTFILE} incrementally.
-setopt SHARE_HISTORY        # Shares history across all sessions.
-setopt HIST_IGNORE_DUPS     # No duplicate line in the history.
-setopt HIST_IGNORE_ALL_DUPS # Keep the latest command in the history.
-setopt HIST_IGNORE_SPACE    # Not append line when line start with space.
-setopt HIST_SAVE_NO_DUPS    # Older commands that duplicate newer ones are omitted.
-setopt HIST_VERIFY          # Perform history expansion and reload the line into the editing buffer.
+# Save each command’s beginning timestamp (in seconds since the epoch)
+# and the duration (in seconds) to the history file. ‘: <beginning
+# time>:<elapsed seconds>;<command>’.
+setopt EXTENDED_HISTORY
 
+# Perform textual history expansion, csh-style, treating the character
+# ‘!’ specially.
+setopt BANG_HIST
+
+# This options works like APPEND_HISTORY except that new history lines
+# are added to the ${HISTFILE} incrementally (as soon as they are
+# entered), rather than waiting until the shell exits
+setopt INC_APPEND_HISTORY
+
+# Shares history across all sessions rather than waiting for a new shell
+# invocation to read the history file.
+setopt SHARE_HISTORY
+
+# Do not enter command lines into the history list if they are
+# duplicates of the previous event.
+setopt HIST_IGNORE_DUPS
+
+# If a new command line being added to the history list duplicates an
+# older one, the older command is removed from the list (even if it is
+# not the previous event).
+setopt HIST_IGNORE_ALL_DUPS
+
+# Remove command lines from the history list when the first character on
+# the line is a space, or when one of the exganded aliases contains a
+# leading space.
+setopt HIST_IGNORE_SPACE
+
+# When writing out the history file, older commands that duplicate newer
+# ones are omitted.
+setopt HIST_SAVE_NO_DUPS
+
+# Whenever the user enters a line with history expansion, don’t execute
+# the line directly; instead, perform history expansion and reload the
+# line into the editing buffer.
+setopt HIST_VERIFY
+
+# Recognize comments starting with `#`.
+setopt INTERACTIVE_COMMENTS
+
+# ===
+# Configure ZSH jobs
+# ===
+
+# Treat single word simple commands without redirection as candidates
+# for resumption of an existing job.
+setopt AUTO_RESUME
+
+# List jobs in the long format by default.
+setopt LONG_LIST_JOBS
+
+# Report the status of background jobs immediately, rather than waiting
+# until just before printing a prompt.
+setopt NOTIFY
+
+# Run all background jobs at a lower priority.
+unsetopt BG_NICE
+
+# Send the HUP signal to running jobs when the shell exits.
+unsetopt HUP
+
+# Report the status of background and suspended jobs before exiting a
+# shell with job control; a second attempt to exit the shell will
+# succeed. NO_CHECK_JOBS is best used only in combination with NO_HUP,
+# else such jobs will be killed automatically.
+unsetopt CHECK_JOBS
+
+# ===
+# Globing and fds
+# ===
+
+# Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename
+# generation, etc. (An initial unquoted ‘~’ always produces named
+# directory expansion.)
+setopt EXTENDED_GLOB
+
+# Perform implicit tees or cats when multiple redirections are
+# attempted.
+setopt MULTIOS
+
+# Disallow ‘>’ redirection to overwrite existing files. ‘>|’ or ‘>!’
+# must be used to overwrite a file.
+setopt NO_CLOBBER
+
+
+# ===
 # Configure smart URL poasting and escaping
+# ===
+
 autoload -Uz bracketed-paste-url-magic
 zle -N bracketed-paste bracketed-paste-url-magic
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+# ===
 # Configure go
+# ===
+
 export GOPATH=$(go env GOPATH)
 export PATH=$GOPATH/bin:$PATH
 
+# ===
 # Configure erlang
+# ===
+
 ERL_AFLAGS="+pc unicode"
 ERL_AFLAGS="$ERL_AFLAGS -kernel shell_history enabled"
 ERL_AFLAGS="$ERL_AFLAGS -kernel shell_history_path '\"$HOME/.erl_history\"'"
@@ -49,7 +154,10 @@ ERL_AFLAGS="$ERL_AFLAGS -kernel shell_history_path '\"$HOME/.erl_history\"'"
 export ERL_AFLAGS
 export PATH=$HOME/.cache/rebar3/bin:$PATH
 
+# ===
 # Configure ruby
+# ===
+
 eval "$(rbenv init - zsh)"
 
 export PATH=$HOME/.rbenv/shims:$PATH
@@ -57,24 +165,38 @@ export PATH=$HOME/.rbenv/versions:$PATH
 
 export IRBRC=$HOME/.irbrc
 
+# ===
 # Configure python
+# ===
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# ===
 # Configure rust
+# ===
+
 export PATH=$HOME/.cargo/bin:$PATH
 
+# ===
 # Configure ripgrep
+# ===
+
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
-# FZF
+# ===
+# Configure FZF
+# ===
 source /usr/local/share/examples/fzf/shell/completion.zsh
 source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 
+# ===
 # Configure docker
+# ===
+
 export DOCKER_HOST=tcp://172.16.2.2:3232
 
 # ===
@@ -82,7 +204,10 @@ export DOCKER_HOST=tcp://172.16.2.2:3232
 # ===
 
 source <(kubectl completion zsh)
+
+# ===
 # SSH
+# ===
 SSH_ENV=/tmp/$USER/ssh-agent.env
 SSH_SOCK=/tmp/$USER/ssh-agent.sock
 
