@@ -75,7 +75,7 @@ source /usr/local/share/examples/fzf/shell/completion.zsh
 source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 
 # Configure docker
-export DOCKER_HOST=tcp://10.0.1.2:3232
+export DOCKER_HOST=tcp://172.16.2.2:3232
 
 # SSH
 SSH_ENV=/tmp/$USER/ssh-agent.env
