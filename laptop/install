@@ -11,3 +11,6 @@ sysrc ifconfig_net0_ipv6="inet6 accept_rtadv"
 sysrc ifconfig_em0_name=net1
 sysrc ifconfig_net1="DHCP"
 sysrc ifconfig_net1_ipv6="inet6 accept_rtadv"
+
+mkdir -p $HOME/bin
+install -m 644 -o gearnode -g gearnode files/bin/chrome $HOME/bin/chrome
