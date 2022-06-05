@@ -8,7 +8,7 @@ pkg install \
     # system
     syslog-ng unbound \
     # languages
-    ruby go erlang rust \
+    ruby go erlang rust elixir \
     # editors
     vim emacs \
     # X11
