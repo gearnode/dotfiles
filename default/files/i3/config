@@ -1,0 +1,78 @@
+set $mod Mod4
+
+font pango:Noto Sans Mono 8
+
+# open new xterm window
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu
+bindsym $mod+space exec "rofi -combi-modi window,drun,ssh -theme solarized -font 'hack 10' -show combi -icon-theme 'Papirus' -show-icons"
+
+# enter fullscreen mode for the focused window
+bindsym $mod+f fullscreen toggle
+
+# drag floatting windows
+floating_modifier $mod
+
+# toggle tiling / floatting
+bindsym $mod+Shift+space floating toggle
+
+# split
+bindsym $mod+minus split v
+bindsym $mod+backslash split h
+
+# change focussed window
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+
+# move focussed window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+
+# switch workspace
+bindsym $mod+1 workspace number "1"
+bindsym $mod+2 workspace number "2"
+bindsym $mod+3 workspace number "3"
+bindsym $mod+4 workspace number "4"
+bindsym $mod+5 workspace number "5"
+bindsym $mod+6 workspace number "6"
+bindsym $mod+7 workspace number "7"
+bindsym $mod+8 workspace number "8"
+bindsym $mod+9 workspace number "9"
+bindsym $mod+0 workspace number "10"
+
+# move focused window to workspace
+bindsym $mod+Shift+1 move container to workspace number "1"
+bindsym $mod+Shift+2 move container to workspace number "2"
+bindsym $mod+Shift+3 move container to workspace number "3"
+bindsym $mod+Shift+4 move container to workspace number "4"
+bindsym $mod+Shift+5 move container to workspace number "5"
+bindsym $mod+Shift+6 move container to workspace number "6"
+bindsym $mod+Shift+7 move container to workspace number "7"
+bindsym $mod+Shift+8 move container to workspace number "8"
+bindsym $mod+Shift+9 move container to workspace number "9"
+bindsym $mod+Shift+0 move container to workspace number "10"
+
+
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+Shift+plus scratchpad show
+
+
+# i3bar
+bar {
+    position top
+    status_command i3status
+}
