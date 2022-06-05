@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sysrc hostname="laptop.frimin.fr"
