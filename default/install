@@ -26,6 +26,7 @@ pkg install \
     # others
     1password-client2 transmission
 
+sysrc sendmail_enable="NONE"
 sysrc clear_tmp_enable=YES
 sysrc dumpdev=AUTO
 sysrc ntpd_enable=YES
