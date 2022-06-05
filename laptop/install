@@ -3,6 +3,7 @@
 sysrc hostname="laptop.frimin.fr"
 
 sysrc kld_list+=i915kms
+sysrc kld_list+=cuse
 
 sysrc wlans_iwlwifi0=net0
 sysrc ifconfig_net0="WPA DHCP"
@@ -11,6 +12,8 @@ sysrc ifconfig_net0_ipv6="inet6 accept_rtadv"
 sysrc ifconfig_em0_name=net1
 sysrc ifconfig_net1="DHCP"
 sysrc ifconfig_net1_ipv6="inet6 accept_rtadv"
+
+sysrc webcamd_enable="YES"
 
 mkdir -p $HOME/bin
 install -m 644 -o gearnode -g gearnode files/bin/chrome $HOME/bin/chrome
