@@ -4,7 +4,7 @@ pkg install \
     # shell utils
     zsh git curl terraform ripgrep jq jo gmake htop gnupg fzf \
         pngcrush neofetch ipcalc closure-compiler postgresql14-client \
-        docker ImageMagick7 sqlite3 ffmpeg \
+        docker ImageMagick7 sqlite3 ffmpeg kubectl \
     # system
     syslog-ng unbound \
     # languages
