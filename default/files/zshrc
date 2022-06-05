@@ -133,7 +133,6 @@ setopt MULTIOS
 # must be used to overwrite a file.
 setopt NO_CLOBBER
 
-
 # ===
 # Configure smart URL poasting and escaping
 # ===
@@ -213,6 +212,11 @@ alias d=docker
 
 source <(kubectl completion zsh)
 alias k=kubectl
+
+# ===
+# Configure custom binary
+# ===
+export PATH=$HOME/bin:$PATH
 
 # ===
 # SSH
