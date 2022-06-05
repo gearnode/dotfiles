@@ -3,7 +3,7 @@
 pkg install \
     zsh git curl terraform ripgrep jq jo gmake htop gnupg fzf \
         pngcrush neofetch ipcalc closure-compiler postgresql14-client \
-        docker ImageMagick7 sqlite3 ffmpeg kubectl bat \
+        docker ImageMagick7 sqlite3 ffmpeg kubectl bat tree \
         syslog-ng unbound \
         ruby go erlang rust elixir \
         vim emacs \
