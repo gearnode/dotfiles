@@ -59,7 +59,8 @@ install -m 644 -o gearnode -g gearnode files/ripgreprc $HOME/.ripgreprc
 install -m 644 -o gearnode -g gearnode files/zshrc $HOME/.zshrc
 
 mkdir -p $HOME/.config
-mkdir -p $HOME/.config/{i3,i3status}
+mkdir -p $HOME/.config/i3
+mkdir -p $HOME/.config/i3status
 
 install -m 644 -o gearnode -g gearnode files/i3/config $HOME/.config/i3/config
 install -m 644 -o gearnode -g gearnode files/i3status/config $HOME/.config/i3status/config
