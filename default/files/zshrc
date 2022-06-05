@@ -1,7 +1,7 @@
 # ===
 # Aliases
 # ===
-alias l="ls -fF"
+alias l="ls -lF"
 alias la="ls -laF"
 alias cat=bat
 alias g=git
