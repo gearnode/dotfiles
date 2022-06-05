@@ -48,16 +48,17 @@ sysrc vm_delay="5"
 sysrc syslog_ng_enable="YES"
 sysrc syslogd_enable="NO"
 
-cp files/curlrc $HOME/.curlrc
-cp files/gemrc $HOME/.gemrc
-cp files/gitconfig $HOME/.gitconfig
-cp files/gitignore $HOME/.gitignore
-cp files/iex.exs $HOME/.iex.exs
-cp files/mailcap $HOME/.mailcap
-cp files/ripgreprc $HOME/.ripgreprc
-cp files/zshrc $HOME/.zshrc
+install -m 644 -o gearnode -g gearnode files/curlrc $HOME/.curlrc
+install -m 644 -o gearnode -g gearnode files/curlrc $HOME/.curlrc
+install -m 644 -o gearnode -g gearnode files/gemrc $HOME/.gemrc
+install -m 644 -o gearnode -g gearnode files/gitconfig $HOME/.gitconfig
+install -m 644 -o gearnode -g gearnode files/gitignore $HOME/.gitignore
+install -m 644 -o gearnode -g gearnode files/iex.exs $HOME/.iex.exs
+install -m 644 -o gearnode -g gearnode files/mailcap $HOME/.mailcap
+install -m 644 -o gearnode -g gearnode files/ripgreprc $HOME/.ripgreprc
+install -m 644 -o gearnode -g gearnode files/zshrc $HOME/.zshrc
 
 mkdir -p $HOME/.config
 
 mkdir -p $HOME/.ssh
-cp files/ssh_config $HOME/.ssh/config
+install -m 644 -o gearnode -g gearnode files/ssh_config $HOME/.ssh/config

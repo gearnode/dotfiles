@@ -10,5 +10,5 @@ sysrc ifconfig_re0_name="net1"
 sysrc ifconfig_ext1="DHCP"
 sysrc ifconfig_ext1_ipv6="inet6 accept_rtadv"
 
-cp pf.conf /etc/pf.conf
-cp Xdefaults $HOME/.Xdefaults
+install -m 644 -o gearnode -g gearnode pf.conf /etc/pf.conf
+install -m 644 -o gearnode -g gearnode Xdefaults $HOME/.Xdefaults
