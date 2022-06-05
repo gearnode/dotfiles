@@ -2,6 +2,10 @@ PreferredAuthentications publickey
 ForwardAgent yes
 User root
 
+Host docker
+Hostname 172.16.2.2
+User gearnode
+
 Host github.com
 ForwardAgent no
 User gearnode
