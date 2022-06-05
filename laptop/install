@@ -4,5 +4,6 @@ sysrc hostname="laptop.frimin.fr"
 
 sysrc wlans_iwlwifi0=wlan0
 sysrc ifconfig_wlan0_name=net0
+sysrc kld_list+=i915kms
 sysrc ifconfig_net0="WPA DHCP"
 sysrc ifconfig_net0_ipv6="inet6 accept_rtadv"
