@@ -204,7 +204,7 @@ source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 # Configure docker
 # ===
 
-export DOCKER_HOST=tcp://172.16.2.2:3232
+export DOCKER_HOST=tcp://172.16.2.2:2375
 alias d=docker
 
 # ===
