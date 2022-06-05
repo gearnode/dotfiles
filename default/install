@@ -58,9 +58,8 @@ install -m 644 -o gearnode -g gearnode files/mailcap $HOME/.mailcap
 install -m 644 -o gearnode -g gearnode files/ripgreprc $HOME/.ripgreprc
 install -m 644 -o gearnode -g gearnode files/zshrc $HOME/.zshrc
 
-mkdir -p $HOME/.config
-install -m 644 -o gearnode -g gearnode files/i3/config $HOME/.config/i3/config
-install -m 644 -o gearnode -g gearnode files/i3status/config $HOME/.config/i3status/config
+install -d -m 644 -o gearnode -g gearnode files/i3/config $HOME/.config/i3/config
+install -d -m 644 -o gearnode -g gearnode files/i3status/config $HOME/.config/i3status/config
 
 mkdir -p $HOME/.ssh
 install -m 644 -o gearnode -g gearnode files/ssh_config $HOME/.ssh/config
