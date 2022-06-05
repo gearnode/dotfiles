@@ -27,23 +27,35 @@ pkg install \
     1password-client2 transmission
 
 sysrc sendmail_enable="NONE"
+
 sysrc clear_tmp_enable=YES
+
 sysrc dumpdev=AUTO
+
 sysrc ntpd_enable=YES
+
 sysrc moused_enable=YES
+
 sysrc linux_enable=YES
+
 sysrc spotifyd_enable=YES
+
 sysrc pf_enable=YES
 sysrc pflog_enable=YES
+
 sysrc cloned_interfaces=bridge0
 sysrc ifconfig_bridge0_name=vnet0
 sysrc ifconfig_vnet0="inet 172.16.2.1/24 addm net0 up descr vm"
+
 sysrc gateway_enable=YES
+
 sysrc kld_list="vmm"
+
 sysrc vm_enable=YES
 sysrc vm_dir="zfs:zroot/usr/vm"
 sysrc vm_list="docker"
 sysrc vm_delay="5"
+
 sysrc syslog_ng_enable="YES"
 sysrc syslogd_enable="NO"
 
