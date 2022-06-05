@@ -52,7 +52,7 @@ cp files/curlrc $HOME/.curlrc
 cp files/gemrc $HOME/.gemrc
 cp files/gitconfig $HOME/.gitconfig
 cp files/gitignore $HOME/.gitignore
-cp files/iex.exs $HOME/iex.exs
+cp files/iex.exs $HOME/.iex.exs
 cp files/mailcap $HOME/.mailcap
 cp files/ripgreprc $HOME/.ripgreprc
 cp files/zshrc $HOME/.zshrc
