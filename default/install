@@ -38,7 +38,7 @@ sysrc ifconfig_vnet0="inet 172.16.2.1/24 addm net0 up descr vm"
 
 sysrc gateway_enable=YES
 
-sysrc kld_list="vmm"
+sysrc kld_list+="vmm"
 
 sysrc vm_enable=YES
 sysrc vm_dir="zfs:zroot/usr/vm"
