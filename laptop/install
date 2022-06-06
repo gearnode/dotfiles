@@ -15,7 +15,8 @@ sysrc ifconfig_net1_ipv6="inet6 accept_rtadv"
 
 sysrc webcamd_enable="YES"
 
-install -m 644 -o gearnode -g gearnode files/pf.conf /etc/pf.conf
+install -m 644 -o root -g wheel files/pf.conf /etc/pf.conf
+
 install -m 644 -o gearnode -g gearnode files/Xdefaults $HOME/.Xdefaults
 
 mkdir -p $HOME/bin
