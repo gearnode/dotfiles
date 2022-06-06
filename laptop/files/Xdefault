@@ -1,0 +1,39 @@
+Xft.dpi: 314.7
+
+xterm*faceName: "DejaVu Sans Mono"
+xterm*faceSize: 8
+xterm*faceSize1: 10
+xterm*faceSize2: 12
+xterm*faceSize3: 14
+xterm*faceSize4: 16
+xterm*faceSize5: 18
+xterm*faceSize6: 20
+xterm*renderFont: true
+xterm*utf8: 1
+xterm*termName: xterm-256color
+xterm*background: #000c18
+xterm*foreground: #6688cc
+xterm*cursorColor: #fff3e7
+xterm*color0: #000c18
+xterm*color1: #cc0000
+xterm*color2: #22aa44
+xterm*color3: #fff13a
+xterm*color4: #0555a5
+xterm*color5: #ff60dd
+xterm*color6: #0ec4ba
+xterm*color7: #f3f3f3
+xterm*color8: #6688cc
+xterm*color9: #cc0000
+xterm*color10: #22aa44
+xterm*color11: #fff13a
+xterm*color12: #0555a5
+xterm*color13: #ff60dd
+xterm*color14: #0ec4ba
+xterm*color15: #f3f3f3
+xterm*cursorBlink: 1
+xterm*cursorOffTime: 800
+xterm*saveLines: 100000
+xterm*selectToClipboard: true
+xterm*translation: #override \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
