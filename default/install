@@ -7,7 +7,7 @@ pkg install \
         syslog-ng unbound \
         ruby go erlang rust elixir \
         vim emacs \
-        xorg i3 i3status i3lock rofi \
+        xorg i3 i3status i3lock xlockmore rofi \
         firefox chromium weechat \
         spotify-qt spotifyd \
         gimp inkscape libreoffice audacity obs-studio \
